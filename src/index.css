@@ -1,0 +1,51 @@
+/* ===== 合盘 CONVERGE — 全局样式 ===== */
+
+:root {
+  --serif: 'Noto Serif SC', 'Songti SC', 'SimSun', 'STSong', serif;
+  --sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+
+  --bg: #faf6f0;
+  --bg-card: #fffdf8;
+  --text: #4a3f35;
+  --text-light: #8c7b6b;
+  --text-h: #2c1f14;
+  --accent: #c9a96e;
+  --accent-light: rgba(201, 169, 110, 0.15);
+  --accent-border: rgba(201, 169, 110, 0.4);
+  --border: #e8dfd0;
+  --input-bg: #fffdf8;
+  --input-border: #d4c8b0;
+  --input-focus: #c9a96e;
+  --shadow: 0 4px 24px rgba(44, 31, 20, 0.06);
+
+  --gradient-top: linear-gradient(180deg, #f5ede0 0%, #faf6f0 100%);
+
+  font: 16px/1.7 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

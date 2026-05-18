@@ -1,0 +1,433 @@
+/* ===== 合盘 CONVERGE — App 样式 ===== */
+
+/* ---- 布局 ---- */
+.app {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---- 顶部 Hero ---- */
+.hero {
+  width: 100%;
+  position: relative;
+  padding: 60px 0 40px;
+  text-align: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-top);
+  border-radius: 0 0 50% 50% / 0 0 60px 60px;
+  z-index: -1;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: 8px;
+  margin: 0 0 4px;
+}
+
+.hero-subtitle {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.hero-desc {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 2;
+  margin: 0;
+}
+
+/* ---- 表单区 ---- */
+.form-section {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.form {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: var(--shadow);
+}
+
+.form-row {
+  margin-bottom: 24px;
+}
+
+.form-row.split {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row.split .form-label {
+  flex: 1;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label-text {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+  letter-spacing: 1px;
+}
+
+/* 性别选择 */
+.gender-group {
+  display: flex;
+  gap: 12px;
+}
+
+.gender-btn {
+  flex: 1;
+  padding: 10px 0;
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  background: var(--input-bg);
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.gender-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.gender-btn.active {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+/* 输入框 */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  background: var(--input-bg);
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--text);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.form-input::placeholder {
+  color: #c4b99a;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.6;
+}
+
+/* 提交按钮 */
+.submit-btn {
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #c9a96e 0%, #b8955a 100%);
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  margin-top: 8px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(201, 169, 110, 0.35);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loading-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 加载动画 — 三点脉冲 */
+.dot-pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  animation: dotPulse 1.4s infinite ease-in-out both;
+  position: relative;
+}
+
+.dot-pulse::before,
+.dot-pulse::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  animation: dotPulse 1.4s infinite ease-in-out both;
+}
+
+.dot-pulse::before {
+  left: -16px;
+  animation-delay: -0.32s;
+}
+
+.dot-pulse::after {
+  left: 16px;
+  animation-delay: 0.32s;
+}
+
+@keyframes dotPulse {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.3;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ---- 设置区 ---- */
+.settings-section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.settings-toggle {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.settings-toggle:hover {
+  color: var(--accent);
+}
+
+.settings-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---- 错误提示 ---- */
+.error-banner {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px 20px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #b91c1c;
+}
+
+/* ---- 结果展示区 ---- */
+.result-section {
+  width: 100%;
+  margin-top: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: var(--shadow);
+}
+
+.result-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.result-header h2 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: 3px;
+  margin: 0 0 8px;
+}
+
+.result-meta {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.result-content {
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 2;
+  color: var(--text);
+}
+
+.result-content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 32px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 2px;
+}
+
+.result-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 24px 0 10px;
+  letter-spacing: 1px;
+}
+
+.result-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 20px 0 8px;
+}
+
+.result-content p {
+  margin: 0 0 12px;
+}
+
+.result-content strong {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.result-footer {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.export-btn {
+  padding: 10px 28px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: var(--bg-card);
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--accent);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.export-btn:hover {
+  background: var(--accent-light);
+  color: var(--text-h);
+}
+
+/* ---- 底部 ---- */
+.footer {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.footer p {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--text-light);
+  margin: 0 0 4px;
+}
+
+.footer-note {
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  color: #c4b99a !important;
+}
+
+/* ---- 响应式 ---- */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 40px;
+    letter-spacing: 4px;
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  .hero-desc {
+    font-size: 13px;
+  }
+
+  .form {
+    padding: 24px 20px;
+  }
+
+  .form-row.split {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .result-section {
+    padding: 24px 20px;
+  }
+
+  .result-content {
+    font-size: 14px;
+  }
+}
