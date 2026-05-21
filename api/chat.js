@@ -2,6 +2,8 @@
  * Vercel Serverless Function — 代理百炼 API 请求
  * 部署后在 Vercel 设置环境变量 DASHSCOPE_API_KEY
  */
+export const config = { runtime: 'nodejs' };
+
 export default async function handler(req, res) {
   // 只允许 POST
   if (req.method !== 'POST') {
