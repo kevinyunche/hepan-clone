@@ -1,0 +1,7 @@
+name = "hepan-clone"
+compatibility_date = "2026-05-24"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# 部署时在 Cloudflare Pages 设置中添加 DASHSCOPE_API_KEY 环境变量
+# 不要在这里硬编码 API Key
